@@ -137,7 +137,7 @@ POST /api/v1/ask
 - amount (Number)
 - orderDate (Date)
 
-Insert at least 5 sample records in each collection before testing database queries.
+Already inserted more than 5 sample records in each collection before testing database queries, insert if you are using a seperate db insted of mine.
 
 ## Notes
 
