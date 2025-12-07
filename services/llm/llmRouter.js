@@ -20,6 +20,7 @@ const llmRouter = async (query) => {
     
     dont give me data in backticks, just give plain data in json format 
     `;
+    
   try {
     const result = await model.generateContent(prompt);
     let text = result.response.text();

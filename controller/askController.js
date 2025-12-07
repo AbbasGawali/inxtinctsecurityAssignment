@@ -6,6 +6,7 @@ export const processAskQuery = async (req, res) => {
   try {
     const { query } = req.body;
     const instruction = await llmRouter(query);
+    
     let result;
     if (instruction.tool == "weather") {
       result = await weatherTool(instruction.params);
