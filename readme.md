@@ -43,7 +43,7 @@ AI-powered query router that processes natural language questions and returns re
 
 ### 1. Clone & Install
 ```bash
-git clone <repo-url>
+git clone https://github.com/AbbasGawali/inxtinctsecurityAssignment
 cd inxtinct-security-assignment
 npm install
 ```
