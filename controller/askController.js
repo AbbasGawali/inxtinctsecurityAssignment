@@ -6,14 +6,14 @@ export const processAskQuery = async (req, res) => {
   try {
     const { query } = req.body;
     const instruction = await llmRouter(query);
-    
+
     let result;
     if (instruction.tool == "weather") {
       result = await weatherTool(instruction.params);
     } else if (instruction.tool == "database") {
       result = await dbTool(instruction.params);
     } else if (instruction.tool == "GeminiError") {
-      result = { text: "Gemini Api is having some problem or quota exceeded" };
+      result = { text: "Gemini Api is having some problem" };
     } else {
       result = { text: "Sorry, we couldn't process your request at this time" };
     }

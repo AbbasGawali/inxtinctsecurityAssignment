@@ -20,16 +20,16 @@ const llmRouter = async (query) => {
     
     dont give me data in backticks, just give plain data in json format 
     `;
-    
+
   try {
     const result = await model.generateContent(prompt);
     let text = result.response.text();
     return await JSON.parse(text.trim());
   } catch (error) {
-
+    console.log(error)
     const errorMessage = error.message || "";
-    if (errorMessage.includes('429') || errorMessage.includes('quota')) {
-      return { tool: "GeminiError", params: {}, message: "API quota exceeded, try again later" };
+    if (errorMessage.includes('429') || errorMessage.includes('GoogleGenerativeAIFetchError')) {
+      return { tool: "GeminiError", params: {}, message: "API error, try again later" };
     }
 
     return { tool: "Unknown", params: {} };
